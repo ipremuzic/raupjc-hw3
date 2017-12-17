@@ -7,18 +7,7 @@
     {
         if (Model.DateDue != null)
         {
-            if (Model.DaysLeft() < 0)
-            {
-                <span style="color:red">(Trebalo je biti obavljeno prije @Model.DaysLeft().ToString().Substring(1) dana!)</span>
-            }
-            else if (Model.DaysLeft() == 1)     
-            {
-                 <span style="color:red">(za @Model.DaysLeft() dan!)</span>
-             }
-             else
-             {
-                 <span style="color:red">(za @Model.DaysLeft() dana!)</span>
-             }
+            <span style = "color:red" > @Model.DaysLeft() </span>
          }
     }
     

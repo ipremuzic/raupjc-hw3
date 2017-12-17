@@ -28,13 +28,25 @@ namespace Zad2.Models
             
         }
 
-        public int DaysLeft()
+        public string DaysLeft()
         {
             if (DateDue != null)
             {
-                return (DateDue.Value.Date - DateTime.Now.Date).Days;
+                int diffrence=(DateDue.Value.Date - DateTime.Now.Date).Days;
+                if (diffrence < 0)
+                {
+                    return "(Trebalo je biti obavljeno prije " + diffrence.ToString().Substring(1) + " dana!)";
+                }
+                else if (diffrence == 1)
+                {
+                    return "(za " + diffrence + " dan!)";
+                }
+                else
+                {
+                    return "(za " + diffrence + " dana!)";
+                }
             }
-            return 0;
+            return "";
         }
     }
 }
