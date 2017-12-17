@@ -1,0 +1,27 @@
+﻿@using Zad2.Models;
+@model Zad2.Models.AddTodoViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add todo</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-5">
+        <h1>Add new todo</h1>
+        <form asp-action="Add" method="post">
+            Todo text: <input asp-for="Text" class="form-control"/> <span asp-validation-for="Text"></span> <br/>
+            Date due: <input asp-for="DateDue" type="date" class="form-control"/><br/>
+            Labels (separated by ","): <input asp-for="Labels" class="form-control"/><br/>
+            <input type="submit" value="Add"/>
+        </form>
+    </div>
+</div>
+  <br />
+  <br />
+  <p> <a class="btn btn-primary" asp-action="Index">Back to active todos</a> </p>
+</body>
+</html>
